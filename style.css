@@ -1,0 +1,10 @@
+.logo{
+    width: 2%;
+    display: inline-block;
+}
+body{
+    font-family: "Playfair Display";
+}
+.margin-none{
+    margin-right: -1000px !important
+}
