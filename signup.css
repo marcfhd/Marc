@@ -1,0 +1,35 @@
+/* body {
+      background-color: #f8f9fa;
+    } */
+
+    .signup-card {
+      max-width: 450px;
+      margin: auto;
+      margin-top: 80px;
+      border-radius: 15px;
+    }
+
+    .signup-card .card-header {
+      background-color: #0d6efd;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.3rem;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #0d6efd;
+    }
+
+    .btn-primary {
+      width: 100%;
+    }
+    body {
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: flex;
+  align-items: center;
+}

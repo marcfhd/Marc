@@ -1,0 +1,10 @@
+/* Cart page spacing */
+.quantity {
+  width: 80px;
+  margin: auto;
+}
+
+.table td img {
+  width: 60px;
+  margin-right: 10px;
+}

@@ -1,10 +1,54 @@
-.logo{
-    width: 2%;
-    display: inline-block;
+  body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+    .nav-link.active {
+  color: #0d6efd !important;
+  font-weight: bold;
 }
-body{
-    font-family: "Playfair Display";
+
+    .nav-link {
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #0d6efd !important;
+    }
+
+    .hero-section {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-weight: 700;
+    }
+    
+  .nav-icon {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s;
 }
-.margin-none{
-    margin-right: -1000px !important
+
+.nav-icon:hover {
+  color: #0d6efd; 
+}
+.hero-section {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+footer {
+  font-size: 14px;
 }

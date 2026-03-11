@@ -1,0 +1,13 @@
+/* Favorites page */
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+#no-favorites i {
+  color: #dc3545; /* Heart red */
+}
+
+#no-favorites h5 {
+  margin-top: 15px;
+}
