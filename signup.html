@@ -71,8 +71,8 @@
 </div>
 <script>
 function togglePassword(Id, element) {
-  const input = document.getElementById(Id);
-  const icon = element.querySelector("i");
+  let input = document.getElementById(Id);
+  let icon = element.querySelector("i");
 
   if (input.type === "password") {
     input.type = "text";

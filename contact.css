@@ -1,0 +1,51 @@
+/* Card style */
+.contact-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px lightgray;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.contact-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Icon circle */
+.icon-box {
+  width: 70px;
+  height: 70px;
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-size: 24px;
+}
+
+/* Text */
+.contact-card p {
+  color: gray;
+}
+/* Quote box */
+.quote-box {
+  background-color: lightgray;
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 40px;
+}
+
+/* Quote text */
+.quote-text {
+  font-size: 18px;
+  font-style: italic;
+  color: black;
+}
+
+/* Icon style */
+.quote-box i {
+  color: blue;
+}

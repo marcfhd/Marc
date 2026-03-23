@@ -1,27 +1,24 @@
-/* Navbar brand */
+
 .navbar-brand {
   font-weight: bold;
   font-size: 1.4rem;
   letter-spacing: 1px;
-}
+} 
 
-/* Navbar links */
 .nav-link {
   transition: 0.3s;
-  color: white; /* default color for dark navbar */
+  color: white; 
 }
 
 .nav-link:hover {
-  color: #0d6efd !important; /* hover effect */
+  color: #0d6efd !important; 
 }
 
-/* Active page link */
 .nav-link.active {
   color: #0d6efd !important;
   font-weight: bold;
 }
 
-/* Navbar icons (user, favorites, cart) */
 .nav-icon {
   color: white;
   font-size: 20px;
