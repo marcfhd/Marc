@@ -48,10 +48,9 @@ const products = [
 
 ];
 
-// SELECT CONTAINER
+
 const productList = document.getElementById("product-list");
 
-// CREATE PRODUCTS
 products.forEach(product => {
     productList.innerHTML += `
         <div class="col-md-4">
