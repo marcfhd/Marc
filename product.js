@@ -53,7 +53,7 @@ const productList = document.getElementById("product-list");
 
 products.forEach(product => {
     productList.innerHTML += `
-        <div class="col-md-4">
+        <div class="col-md-4 p-3">
             <div class="card product-card h-100">
 
                 <img class="card-img-top product-img" src="${product.image}" alt="${product.name}">
