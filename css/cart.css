@@ -1,0 +1,35 @@
+/* Product image */
+.product-img {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Quantity input */
+.quantity {
+  width: 80px;
+  margin: auto;
+}
+
+/* Cart table shadow and rounded corners */
+.table-responsive {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn-danger {
+  transition: 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Total section styling */
+.text-end h4 {
+  font-weight: 600;
+}

@@ -62,7 +62,7 @@ products.forEach(product => {
                     <h5 class="card-title">${product.name}</h5>
                     <p class="card-text">$${product.price}</p>
 
-                    <a href="#" class="btn btn-primary">
+                    <a href="../auth/login.html" class="btn btn-primary">
                         <i class="fa fa-cart-plus"></i> Add to Cart
                     </a>
                 </div>
