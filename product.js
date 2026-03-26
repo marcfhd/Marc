@@ -132,7 +132,42 @@ const products = [
         price: 224,
         image: "../img/xiaomi-monitors-xiaomi-mi-curved-gaming-monitor-34-inch-with-amd-freesync-premium-wqhd-3-440-x-1-440-21-9-144hz-4ms-300lm-121-srgb-2-hdmi-2-display-port-audio-out-tuv-certified-blue-l_443f23f2-605a-47a3-af74.webp"
     },
-    
+     {
+        name: " Headset <br> (Black)",
+        price: 65,
+        image: "../img/1-1.jpg"
+    },
+   {
+        name: " Headset <br> (White)",
+        price: 65,
+        image: "../img/36717.webp"
+    },
+    {
+        name: " Headset <br> (Grey)",
+        price: 65,
+        image: "../img/arctis_nova_elite_sage_gold_img_buy_primary.webp"
+    },
+    {
+        name: " Headset <br> (Red)",
+        price: 65,
+        image: "../img/5-cee36fcc73-312811537.webp"
+    },
+     {
+        name: " HDMI-USB-C adapter",
+        price: 65,
+        image: "../img/AVimg_46450.jpg"
+    },
+    {
+        name: " USB C to Dual HDMI Adapter",
+        price: 65,
+        image: "../img/usb-c-4-in-1-beirut-lebanon-1.webp"
+    },
+    {
+        name: " USB C to Multiport Adapter with Charging Port",
+        price: 65,
+        image: "../img/61kv7aTqB0L.jpg"
+    },
+
     
 
 
