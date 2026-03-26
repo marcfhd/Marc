@@ -6,50 +6,107 @@ const products = [
         image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7"
     },
     {
-        name: "Mechanical Keyboard",
+        name: "Mechanical Keyboard <br> (red lights)",
+        price: 40,
+        image: "../img/front.png"
+    },
+    {
+        name: "Mechanical Keyboard <br> (white)",
+        price: 40,
+        image: "../img/f75c5900-7913-4019-b47c-41558c113734.5c375d7392bd2168da60ad85d8f4a785.webp"
+    },
+     {
+        name: "Mechanical Keyboard <br> (black)",
+        price: 40,
+        image: "../img/02th3QKnG4NLgUrOSBe1cfh-32..v1750707254.jpg"
+    },
+    {
+        name: "Gaming Keyboard ",
         price: 80,
-        image: "https://images.unsplash.com/photo-1593642634367-d91a135587b5"
+        image: "../img/BlitzWolf-BW-KB2-yellow.jpg"
+    },
+    
+    {
+        name: "Gaming keyboard",
+        price: 100,
+        image: "../img/GamingKEYBOARD-1.webp"
     },
     {
-        name: "Headphones",
+        name: "Gaming mouse",
         price: 150,
-        image: "images/headphones.png"
+        image: "../img/RedragonRGBWirelessGamingMouseImpactEliteM913_2.webp"
     },
     {
-        name: "Keyboard",
+        name: "Gaming mouse <br> (white)",
+        price: 60,
+        image: "../img/e5a1cb_934497d69e0841f883869d690daa3414~mv2.avif"
+    },
+       {
+        name: "Gaming mouse",
         price: 90,
-        image: "images/keyboard.png"
+        image: "../img/big.jpg"
     },
     {
-        name: "Logitech M331 Silent Mouse (Black)",
+        name: "Logitech M331 Silent Mouse <br> (Black)",
         price: 40,
-        image: "../logitech-m331-wireless-silent-mouse-black.jpg"
+        image: "../img/logitech-m331-wireless-silent-mouse-black.jpg"
     },
      {
-        name: "Logitech M331 Silent Mouse (Red)",
+        name: "Logitech M331 Silent Mouse <br> (Red)",
         price: 40,
-        image: "../m330-wireless-mouse-top-view-red-gallery-01.webp"
+        image: "../img/m330-wireless-mouse-top-view-red-gallery-01.webp"
     },
      {
-        name: "Logitech M331 Silent Mouse (Grey)",
+        name: "Logitech M331 Silent Mouse <br> (Grey)",
         price: 40,
-        image: "../images.jpg"
+        image: "../img/images.jpg"
     },
     {
-        name: "Logitech M331 Silent Mouse (Blue)",
+        name: "Logitech M331 Silent Mouse <br> (Blue)",
         price: 40,
-        image: "../images (2).jpg"
+        image: "../img/images (2).jpg"
     },
+   
     {
-        name: "Monitor",
+        name: "Processor <br> core i7",
+        price: 220,
+        image: "../img/71Xyi7bXarL._AC_UF894,1000_QL80_.jpg"
+    },
+     {
+        name: "Processor <br> core i9",
         price: 300,
-        image: "images/monitor.png"
+        image: "../img/s-Intel-Core-X-Series-processor-family-21-690x460_2.webp"
+    },
+    {
+        name: "Processor <br> core i5",
+        price: 150,
+        image: "../img/41i+sZeH71L._AC_UF1000,1000_QL80_.jpg"
+    },
+     {
+        name: "RAM <br> 16 GB(2X8GB)",
+        price: 220,
+        image: "../img/za44-1.gif"
+    },
+     {
+        name: "RAM <br> 16 GB",
+        price: 220,
+        image: "../img/WhatsApp-Image-2025-06-21-at-10.27.37-AM.jpeg"
+    },
+     {
+        name: "RAM <br> 8 GB",
+        price: 220,
+        image: "../img/wbywhltj.png"
+    },
+      {
+        name: "RAM <br> 48 GB(2x24GB)",
+        price: 220,
+        image: "../img/za60-1.gif"
     },
 
 ];
 
 
-const productList = document.getElementById("product-list");
+let productList = document.getElementById("product-list");
 
 products.forEach(product => {
     productList.innerHTML += `
@@ -71,3 +128,45 @@ products.forEach(product => {
         </div>
     `;
 });
+
+const searchInput = document.getElementById("searchInput");
+
+// Run ONLY on products page
+if (window.location.pathname.includes("products.html") && searchInput) {
+
+    searchInput.addEventListener("input", function () {
+        const value = this.value.toLowerCase();
+
+        const cards = document.querySelectorAll(".product-card");
+        let found = false;
+
+        cards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+
+            if (text.includes(value)) {
+                card.parentElement.style.display = "";
+                found = true;
+            } else {
+                card.parentElement.style.display = "none";
+            }
+        });
+
+        // Handle "no results"
+        let noResultMsg = document.getElementById("no-results");
+
+        if (!found) {
+            if (!noResultMsg) {
+                noResultMsg = document.createElement("h4");
+                noResultMsg.id = "no-results";
+                noResultMsg.className = "text-center w-100 mt-4";
+                noResultMsg.innerText = "No products found 😢";
+                document.getElementById("product-list").appendChild(noResultMsg);
+            }
+        } else {
+            if (noResultMsg) {
+                noResultMsg.remove();
+            }
+        }
+    });
+
+}
