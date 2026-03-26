@@ -23,22 +23,22 @@ const products = [
     {
         name: "Logitech M331 Silent Mouse (Black)",
         price: 40,
-        image: "logitech-m331-wireless-silent-mouse-black.jpg"
+        image: "../logitech-m331-wireless-silent-mouse-black.jpg"
     },
      {
         name: "Logitech M331 Silent Mouse (Red)",
         price: 40,
-        image: "m330-wireless-mouse-top-view-red-gallery-01.webp"
+        image: "../m330-wireless-mouse-top-view-red-gallery-01.webp"
     },
      {
         name: "Logitech M331 Silent Mouse (Grey)",
         price: 40,
-        image: "images.jpg"
+        image: "../images.jpg"
     },
     {
         name: "Logitech M331 Silent Mouse (Blue)",
         price: 40,
-        image: "images (2).jpg"
+        image: "../images (2).jpg"
     },
     {
         name: "Monitor",
