@@ -84,24 +84,57 @@ const products = [
     },
      {
         name: "RAM <br> 16 GB(2X8GB)",
-        price: 220,
+        price: 600,
         image: "../img/za44-1.gif"
     },
      {
         name: "RAM <br> 16 GB",
-        price: 220,
+        price: 700,
         image: "../img/WhatsApp-Image-2025-06-21-at-10.27.37-AM.jpeg"
     },
      {
         name: "RAM <br> 8 GB",
-        price: 220,
+        price: 400,
         image: "../img/wbywhltj.png"
     },
       {
         name: "RAM <br> 48 GB(2x24GB)",
-        price: 220,
+        price: 900,
         image: "../img/za60-1.gif"
     },
+      {
+        name: "Hard Disk <br> 6TB",
+        price: 220,
+        image: "../img/35-internal-wd-hard-drive-35-inch-4tb-internal-surveillance-64mb-6gb-s-purple-wd40purx-64akyy0.jpg"
+    },
+     {
+        name: "Hard Disk <br> 1TB",
+        price: 180,
+        image: "../img/WesternDigital1tbHarddiskDriveBlue-b_2048x.webp"
+    },
+     {
+        name: "Hard Disk <br> 4TB",
+        price: 180,
+        image: "../img/WD40PURX.webp"
+    },
+     {
+        name: " Gaming Monitor <br> 32-inch",
+        price: 224,
+        image: "../img/lg-ultragear-32gs95ue-gaming-monitor-6492.webp"
+    },
+    {
+        name: " Gaming Monitor <br> 32-inch",
+        price: 224,
+        image: "../img/MnbigSzr5VXNPJueXazWhT.png"
+    },
+    {
+        name: " Gaming Monitor <br> 34-inch",
+        price: 224,
+        image: "../img/xiaomi-monitors-xiaomi-mi-curved-gaming-monitor-34-inch-with-amd-freesync-premium-wqhd-3-440-x-1-440-21-9-144hz-4ms-300lm-121-srgb-2-hdmi-2-display-port-audio-out-tuv-certified-blue-l_443f23f2-605a-47a3-af74.webp"
+    },
+    
+    
+
 
 ];
 
@@ -137,6 +170,15 @@ fetch("navbar.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
+     let page1 = window.location.pathname.split("/").pop();
+
+  // Highlight active link
+  let links = document.querySelectorAll(".nav-link");
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].getAttribute("href") == page1) {
+      links[i].classList.add("active");
+    }
+  }
 
     // Show search bar ONLY on products page
     const page = window.location.pathname.split("/").pop();
