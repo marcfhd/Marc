@@ -154,18 +154,23 @@ const products = [
     },
      {
         name: " HDMI-USB-C adapter",
-        price: 65,
+        price: 12,
         image: "../img/AVimg_46450.jpg"
     },
     {
-        name: " USB C to Dual HDMI Adapter",
-        price: 65,
+        name: " USB Type C to Dual HDMI Adapter",
+        price: 17,
         image: "../img/usb-c-4-in-1-beirut-lebanon-1.webp"
     },
     {
-        name: " USB C to Multiport Adapter with Charging Port",
-        price: 65,
+        name: " USB Type C to Multiport Adapter with Charging Port",
+        price: 24,
         image: "../img/61kv7aTqB0L.jpg"
+    },
+    {
+        name: " USB Type C to HDMI/VGA Adapter",
+        price: 30,
+        image: "../img/USB-C-TO-HDMIVGA-PIC-1.jpeg"
     },
 
     
