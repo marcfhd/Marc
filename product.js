@@ -122,6 +122,9 @@ products.forEach(product => {
                     <a href="#" class="btn btn-primary">
                         <i class="fa fa-cart-plus"></i> Add to Cart
                     </a>
+                     <button class="btn btn-outline-danger favorite-btn" data-index="${product.name}">
+                        <i class="fa fa-heart"></i>
+                    </button>
                 </div>
 
             </div>
@@ -129,44 +132,48 @@ products.forEach(product => {
     `;
 });
 
-const searchInput = document.getElementById("searchInput");
+// After loading navbar
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
 
-// Run ONLY on products page
-if (window.location.pathname.includes("products.html") && searchInput) {
+    // Show search bar ONLY on products page
+    const page = window.location.pathname.split("/").pop();
+    const searchForm = document.getElementById("searchForm");
+    if (page !== "products.html") searchForm?.classList.add("d-none");
 
-    searchInput.addEventListener("input", function () {
-        const value = this.value.toLowerCase();
+    // ✅ Attach search listener AFTER navbar is loaded
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+        searchInput.addEventListener("keyup", function () {
+            const value = this.value.toLowerCase();
+            const cards = document.querySelectorAll(".product-card");
+            let found = false;
 
-        const cards = document.querySelectorAll(".product-card");
-        let found = false;
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(value)) {
+                    card.parentElement.style.display = "";
+                    found = true;
+                } else {
+                    card.parentElement.style.display = "none";
+                }
+            });
 
-        cards.forEach(card => {
-            const text = card.textContent.toLowerCase();
-
-            if (text.includes(value)) {
-                card.parentElement.style.display = "";
-                found = true;
+            // Handle no results
+            let noResultMsg = document.getElementById("no-results");
+            if (!found) {
+                if (!noResultMsg) {
+                    noResultMsg = document.createElement("h4");
+                    noResultMsg.id = "no-results";
+                    noResultMsg.className = "text-center w-100 mt-4";
+                    noResultMsg.innerText = "No products found 😢";
+                    document.getElementById("product-list").appendChild(noResultMsg);
+                }
             } else {
-                card.parentElement.style.display = "none";
+                if (noResultMsg) noResultMsg.remove();
             }
         });
-
-        // Handle "no results"
-        let noResultMsg = document.getElementById("no-results");
-
-        if (!found) {
-            if (!noResultMsg) {
-                noResultMsg = document.createElement("h4");
-                noResultMsg.id = "no-results";
-                noResultMsg.className = "text-center w-100 mt-4";
-                noResultMsg.innerText = "No products found 😢";
-                document.getElementById("product-list").appendChild(noResultMsg);
-            }
-        } else {
-            if (noResultMsg) {
-                noResultMsg.remove();
-            }
-        }
-    });
-
-}
+    }
+  });
