@@ -16,35 +16,19 @@
   <script src="../navbar.js"></script>
 
   <!-- Favorites Section -->
-  <div class="container mt-5 mb-5 text-center">
-
+<div class="container mt-5 mb-5 text-center">
     <h2 class="mb-4">❤️ Your Favorites</h2>
-
-    <!-- No favorites message -->
     <div id="no-favorites" class="text-muted py-5">
-      <i class="fa-solid fa-heart fa-3x mb-3"></i>
-      <h5>You have no favorite products yet.</h5>
-      <a href="products.html" class="btn btn-primary mt-3">Browse Products</a>
+        <i class="fa-solid fa-heart fa-3x mb-3"></i>
+        <h5>You have no favorite products yet.</h5>
+        <a href="products.html" class="btn btn-primary mt-3">Browse Products</a>
     </div>
 
-    <!-- Favorites list (hidden if empty) -->
-    <div class="row" id="favorites-list";>
-      <!-- Example product card template -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm text-center">
-          <img src="" class="card-img-top" alt="">
-          <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text">yfjytfj</p>
-            <button class="btn btn-danger btn-sm remove-fav">
-              <i class="fa fa-trash"></i> Remove
-            </button>
-          </div>
-        </div>
-      </div>
+    <!-- Favorites list -->
+    <div class="row justify-content-center" id="favorites-list">
+        <!-- Cards will be added here by JS -->
     </div>
-
-  </div>
-
+</div>
+<script src="../favorites.js"></script>
 </body>
 </html>

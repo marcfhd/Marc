@@ -11,4 +11,22 @@
 #no-favorites h5 {
   margin-top: 15px;
 }
+.product-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card .card-body {
+  padding: 15px;
+}
 

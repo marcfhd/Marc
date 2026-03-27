@@ -204,6 +204,31 @@ products.forEach(product => {
         </div>
     `;
 });
+let favs = JSON.parse(localStorage.getItem("favorites")) || [];
+let buttons = document.querySelectorAll(".favorite-btn");
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].onclick = function () {
+        let name = this.getAttribute("data-index");
+        let exists = false;
+        // check if already exists
+        for (let k = 0; k < favs.length; k++) {
+            if (favs[k].name === name) {
+                exists = true;
+                break;
+            }
+        }
+        // only add if NOT 
+        if (!exists) {
+            for (let j = 0; j < products.length; j++) {
+                if (products[j].name === name) {
+                    favs.push(products[j]);
+                    break;
+                }
+            }
+            localStorage.setItem("favorites", JSON.stringify(favs));
+        }
+    };
+}
 
 // After loading navbar
 fetch("navbar.html")
@@ -220,28 +245,34 @@ fetch("navbar.html")
     }
   }
 
-    // Show search bar ONLY on products page
-    const page = window.location.pathname.split("/").pop();
-    const searchForm = document.getElementById("searchForm");
+
+    let page = window.location.pathname.split("/").pop();
+    let searchForm = document.getElementById("searchForm");
     if (page !== "products.html") searchForm?.classList.add("d-none");
 
-    // ✅ Attach search listener AFTER navbar is loaded
-    const searchInput = document.getElementById("searchInput");
-    if (searchInput) {
-        searchInput.addEventListener("keyup", function () {
-            const value = this.value.toLowerCase();
-            const cards = document.querySelectorAll(".product-card");
-            let found = false;
 
-            cards.forEach(card => {
-                const text = card.innerText.toLowerCase();
-                if (text.includes(value)) {
-                    card.parentElement.style.display = "";
-                    found = true;
-                } else {
-                    card.parentElement.style.display = "none";
-                }
-            });
+    let searchInput = document.getElementById("searchInput");
+
+if (searchInput) {
+    searchInput.addEventListener("keyup", function () {
+
+        let value = searchInput.value.toLowerCase();
+        let cards = document.querySelectorAll(".product-card");
+        let found = false;
+
+        for (let i = 0; i < cards.length; i++) {
+            let text = cards[i].innerText.toLowerCase();
+
+            if (text.includes(value)) {
+                cards[i].parentElement.style.display = "";
+                found = true;
+            } else {
+                cards[i].parentElement.style.display = "none";
+            }
+        }
+
+    });
+}
 
             // Handle no results
             let noResultMsg = document.getElementById("no-results");
@@ -257,5 +288,3 @@ fetch("navbar.html")
                 if (noResultMsg) noResultMsg.remove();
             }
         });
-    }
-  });
