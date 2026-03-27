@@ -1,5 +1,5 @@
 body {
-  background-color: #f5f7fa; /* light gray */
+  background-color: lightgray; /* light gray */
   font-family: Arial, sans-serif;
 }
 
@@ -26,5 +26,5 @@ h4, h5 {
 }
 
 .btn-primary:hover {
-  background-color: #0b5ed7; /* darker blue */
+  background-color: darkblue; /* darker blue */
 }
