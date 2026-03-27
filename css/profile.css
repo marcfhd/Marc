@@ -1,0 +1,39 @@
+body {
+  background:#0d6efd !important;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-wrapper {
+  min-height: 100vh;
+  padding-top: 100px;   /* space below navbar */
+  padding-bottom: 50px; /* optional */
+}
+
+/* Card */
+.profile-card {
+  width: 350px;
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Inputs */
+.custom-input {
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+
+/* Button */
+.btn-primary {
+  background: midnightblue; 
+  border: none;
+}
+.input-group-text {
+  background: white;
+  border: 1px solid lightgray;
+  border-right: none;
+  color: gray;
+}
+
