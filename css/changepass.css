@@ -16,7 +16,7 @@
   background-color: black;
 }
 
-/* Small animation */
+/*  animation */
 .password-card:hover {
   transform: translateY(-5px);
   transition: 0.3s;

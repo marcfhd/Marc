@@ -1,5 +1,5 @@
 body {
-  background-color: lightgray; /* light gray */
+  background-color: lightgray; 
   font-family: Arial, sans-serif;
 }
 
@@ -17,7 +17,7 @@ h4, h5 {
 }
 
 .btn-primary {
-  background-color: #0d6efd; /* Bootstrap blue */
+  background-color: #0d6efd; 
   border: none;
   border-radius: 10px;
   padding: 12px;
@@ -26,5 +26,5 @@ h4, h5 {
 }
 
 .btn-primary:hover {
-  background-color: darkblue; /* darker blue */
+  background-color: darkblue; 
 }

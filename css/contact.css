@@ -7,12 +7,12 @@
   transition: 0.3s;
 }
 
-/* Hover effect */
+
 .contact-card:hover {
   transform: translateY(-8px);
 }
 
-/* Icon circle */
+
 .icon-box {
   width: 70px;
   height: 70px;
