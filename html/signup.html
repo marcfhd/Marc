@@ -41,7 +41,7 @@
        <div class="mb-3">
   <label class="form-label">Password</label>
   <div class="input-group">
-    <input type="password" name="pass" class="form-control" id="password" placeholder="Create a password" required>
+    <input type="password" min="7" name="pass" class="form-control" id="password" placeholder="Create a password" required>
     <span class="input-group-text" onclick="togglePassword('password', this)" style="cursor:pointer;">
       <i class="fa-solid fa-eye"></i>
     </span>
@@ -106,7 +106,8 @@ if (error) {
     errorDiv.innerText = "Something went wrong";
   }else if (error==="date"){
      errorDiv.innerText = "Birthdate cannot be in the future!";
-
+  }else if(error==="password"){
+    errorDiv.innerText="Password must be at least 7 characters."
   }
 
 }

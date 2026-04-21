@@ -13,7 +13,7 @@ fetch("navbar.html")
     }
   }
 
-  // Show search bar ONLY on products.html
+  // Show search bar only on products.html
   let searchForm = document.getElementById("searchForm");
  if (page !== "products.html") {
   searchForm.classList.add("d-none");

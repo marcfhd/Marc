@@ -10,7 +10,7 @@ if (favs.length === 0) {
 } else {
     empty.style.display = "none";
 
-    // simple loop
+ 
  for (let i = 0; i < favs.length; i++) {
     list.innerHTML += `
         <div class="col-md-4 p-3">

@@ -21,9 +21,9 @@ function checkUserCredentials($conn, $username, $password) {
             return "blocked";
         }
 
-        if (password_verify($password, $row["password"])) {
-            return $row;
-        }
+        if ($password === $row["password"]) {
+    return $row;
+}
     }
 
     return false;
