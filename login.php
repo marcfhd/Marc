@@ -20,10 +20,9 @@ function checkUserCredentials($conn, $username, $password) {
         if ($row["is_blocked"] == 1) {
             return "blocked";
         }
-
-        if ($password === $row["password"]) {
-    return $row;
-}
+        if (password_verify($password, $row["password"])) {
+            return $row;
+        }
     }
 
     return false;
@@ -31,7 +30,7 @@ function checkUserCredentials($conn, $username, $password) {
 
 if (isset($_COOKIE["remember_user"])) {
     $_SESSION["user_id"] = $_COOKIE["remember_user"];
-  header("Location: html/index.html");
+    header("Location: html/index.html");
     exit();
 }
 
