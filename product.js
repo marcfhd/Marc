@@ -241,8 +241,8 @@ function displayProducts(filteredProducts) {
         `;
     });
 
-    // addFavoriteEvents();
-    // addCartEvents();
+    addFavoriteEvents();
+    addCartEvents();
 }
 displayProducts(products);
 
@@ -264,81 +264,81 @@ function getFilteredProducts() {
 }
 
 // // FAVORITES
-// function addFavoriteEvents() {
-//     let favs = JSON.parse(localStorage.getItem("favorites")) || [];
-//     let favButtons = document.querySelectorAll(".favorite-btn");
+function addFavoriteEvents() {
+    let favs = JSON.parse(localStorage.getItem("favorites")) || [];
+    let favButtons = document.querySelectorAll(".favorite-btn");
 
-//     for (let i = 0; i < favButtons.length; i++) {
-//         favButtons[i].onclick = function () {
-//             let name = this.getAttribute("data-name");
-//             let image = this.getAttribute("data-image");
-//             let exists = false;
-//             let productToAdd = null;
+    for (let i = 0; i < favButtons.length; i++) {
+        favButtons[i].onclick = function () {
+            let name = this.getAttribute("data-name");
+            let image = this.getAttribute("data-image");
+            let exists = false;
+            let productToAdd = null;
 
-//             for (let j = 0; j < products.length; j++) {
-//                 if (products[j].name === name && products[j].image === image) {
-//                     productToAdd = products[j];
-//                     break;
-//                 }
-//             }
+            for (let j = 0; j < products.length; j++) {
+                if (products[j].name === name && products[j].image === image) {
+                    productToAdd = products[j];
+                    break;
+                }
+            }
 
-//             for (let j = 0; j < favs.length; j++) {
-//                 if (favs[j].name === name && favs[j].image === image) {
-//                     exists = true;
-//                     break;
-//                 }
-//             }
+            for (let j = 0; j < favs.length; j++) {
+                if (favs[j].name === name && favs[j].image === image) {
+                    exists = true;
+                    break;
+                }
+            }
 
-//             if (!exists && productToAdd) {
-//                 favs.push(productToAdd);
-//                 localStorage.setItem("favorites", JSON.stringify(favs));
-//             }
-//         };
-//     }
-// }
+            if (!exists && productToAdd) {
+                favs.push(productToAdd);
+                localStorage.setItem("favorites", JSON.stringify(favs));
+            }
+        };
+    }
+}
 
-// // CART
-// function addCartEvents() {
-//     let cartButtons = document.querySelectorAll(".add-cart-btn");
+// CART
+function addCartEvents() {
+    let cartButtons = document.querySelectorAll(".add-cart-btn");
 
-//     for (let i = 0; i < cartButtons.length; i++) {
-//         cartButtons[i].onclick = function () {
-//             let cart = JSON.parse(localStorage.getItem("cart")) || [];
-//             let name = this.getAttribute("data-name");
-//             let image = this.getAttribute("data-image");
-//             let exists = false;
-//             let productToAdd = null;
+    for (let i = 0; i < cartButtons.length; i++) {
+        cartButtons[i].onclick = function () {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let name = this.getAttribute("data-name");
+            let image = this.getAttribute("data-image");
+            let exists = false;
+            let productToAdd = null;
 
-//             for (let j = 0; j < products.length; j++) {
-//                 if (products[j].name === name && products[j].image === image) {
-//                     productToAdd = products[j];
-//                     break;
-//                 }
-//             }
+            for (let j = 0; j < products.length; j++) {
+                if (products[j].name === name && products[j].image === image) {
+                    productToAdd = products[j];
+                    break;
+                }
+            }
 
-//             for (let j = 0; j < cart.length; j++) {
-//                 if (cart[j].name === name && cart[j].image === image) {
-//                     cart[j].quantity += 1;
-//                     exists = true;
-//                     break;
-//                 }
-//             }
+            for (let j = 0; j < cart.length; j++) {
+                if (cart[j].name === name && cart[j].image === image) {
+                    cart[j].quantity += 1;
+                    exists = true;
+                    break;
+                }
+            }
 
-//             if (!exists && productToAdd) {
-//                 cart.push({
-//                     name: productToAdd.name,
-//                     price: productToAdd.price,
-//                     image: productToAdd.image,
-//                     quantity: 1
-//                 });
-//             }
+            if (!exists && productToAdd) {
+                cart.push({
+                    name: productToAdd.name,
+                    price: productToAdd.price,
+                    image: productToAdd.image,
+                    quantity: 1
+                });
+            }
 
-//             localStorage.setItem("cart", JSON.stringify(cart));
-//         };
-//     }
-// }
+            localStorage.setItem("cart", JSON.stringify(cart));
+        };
+    }
+}
 
-// displayProducts(products);
+displayProducts(products);
 
 // NAVBAR
 fetch("navbar.html")

@@ -28,12 +28,12 @@ $result = $conn->query("SELECT * FROM products");
 
 <body>
 
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
   <div class="container">
-    <a class="navbar-brand">💻 TechHub Admin</a>
-    <div>
-      <a class="nav-link d-inline text-white" href="admin_users.php">Users</a>
-      <a class="nav-link d-inline text-white fw-bold" href="admin_products.php">Products</a>
+    <a class="navbar-brand" href="#">💻 TechHub Admin</a>
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link " href="admin_users.php">Users</a>
+      <a class="nav-link active" href="admin_products.php">Products</a>
     </div>
   </div>
 </nav>
