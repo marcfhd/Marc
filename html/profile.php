@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: login_page.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +63,7 @@
        <a href="../html/changepass.html" class="btn btn-primary w-100 rounded-pill mt-3">
   <i class="fa fa-lock me-2"></i> Change Password
 </a>
-       <a href="../logout.php" class="btn btn-primary w-100 rounded-pill mt-3">
+       <a href="logout.php" class="btn btn-primary w-100 rounded-pill mt-3">
    Logout
 </a>
       </form>

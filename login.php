@@ -39,14 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])) {
     $password = trim($_POST["pass"]);
 
     if (empty($username) || empty($password)) {
-        header("Location: html/login.html?error=empty");
+        header("Location: html/login_page.php?error=empty");
         exit();
     }
 
     $user = checkUserCredentials($conn, $username, $password);
 
     if ($user === "blocked") {
-        header("Location: html/login.html?error=blocked");
+        header("Location: html/login_page.php?error=blocked");
         exit();
     }
 
@@ -60,13 +60,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])) {
         }
 
         if ($user["role"] === "admin") {
-            header("Location: html/admin.html");
+            header("Location: html/admin_users.php");
         } else {
             header("Location: html/index.html");
         }
         exit();
     } else {
-        header("Location: html/login.html?error=invalid");
+        header("Location: html/login_page.php?error=invalid");
         exit();
     }
 }

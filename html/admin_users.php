@@ -34,6 +34,7 @@ $result = $conn->query("SELECT * FROM users");
     <div class="navbar-nav ms-auto">
       <a class="nav-link active" href="admin_users.php">Users</a>
       <a class="nav-link" href="admin_products.php">Products</a>
+       <a class="nav-link" href="admin_orders.php">Orders</a>
     </div>
   </div>
 </nav>

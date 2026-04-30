@@ -22,14 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $today = date("Y-m-d");
 
         if ($dateofbirth > $today){
-            header("Location: html/signup.html?error=date");
+            header("Location: html/signup_page.php?error=date");
             exit();
         }
 
-        $password = trim($_POST["pass"]);
+      $password = password_hash($_POST["pass"], PASSWORD_DEFAULT);
 
         if (strlen($password) < 7){
-            header("Location: html/signup.html?error=password");
+            header("Location: html/signup_page.php?error=password");
             exit();
         }
 
@@ -38,12 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $confpassword = trim($_POST["confpassword"]);
 
         if (empty($email) || empty($username) || empty($fullname) || empty($dateofbirth) || empty($password) || empty($confpassword)) {
-            header("Location: html/signup.html?error=empty");
+            header("Location: html/signup_page.php?error=empty");
             exit();
         }
 
         if ($password !== $confpassword) {
-            header("Location: html/signup.html?error=match");
+            header("Location: html/signup_page.php?error=match");
             exit();
         }
 
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = $checkStmt->get_result();
 
         if ($result->num_rows > 0) {
-            header("Location: html/signup.html?error=exists");
+            header("Location: html/signup_page.php?error=exists");
             exit();
         }
 
@@ -72,13 +72,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: html/index.html");
             exit();
         } else {
-            header("Location: html/signup.html?error=server");
+            header("Location: html/signup_page.php?error=server");
         }
 
         $stmt->close();
         $checkStmt->close();
     } else {
-        header("Location: html/signup.html?error=missing");
+        header("Location: html/signup_page.php?error=missing");
     }
 }
 

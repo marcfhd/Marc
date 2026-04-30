@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    if ($_SESSION["role"] === "admin") {
+        header("Location: admin_users.php");
+    } else {
+        header("Location: index.html");
+    }
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +77,7 @@
 
       <div class="text-center mt-3">
         Already have an account?
-        <a href="login.html">Login</a>
+        <a href="login_page.php">Login</a>
       </div>
 <div id="error-msg" class="alert alert-danger text-center" style="display:none;"></div>
     </div>
@@ -118,3 +130,4 @@ window.history.replaceState({}, document.title, window.location.pathname);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
+<!-- http://localhost/Marc/html/signup_page.php -->
