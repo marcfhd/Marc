@@ -15,7 +15,7 @@ fetch("html/navbar.html")
 
   let searchForm = document.getElementById("searchForm");
 
-  if (page !== "products.php") {
+  if (searchForm && page !== "products.php") {
     searchForm.classList.add("d-none");
   }
 });
