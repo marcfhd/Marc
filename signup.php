@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit();
         }
 
-      $password = password_hash($_POST["pass"], PASSWORD_DEFAULT);
+      $password = trim($_POST["pass"]);
 
         if (strlen($password) < 7){
             header("Location: html/signup_page.php?error=password");
