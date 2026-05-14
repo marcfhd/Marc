@@ -33,8 +33,8 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-
 <div id="navbar"></div>
+
 <script src="../navbar.js"></script>
 
 <div class="container mt-4">

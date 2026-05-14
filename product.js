@@ -358,7 +358,7 @@ fetch("navbar.html")
         let page = window.location.pathname.split("/").pop();
         let searchForm = document.getElementById("searchForm");
 
-        if (page !== "products.html" && searchForm) {
+        if (page !== "products.php" && searchForm) {
             searchForm.classList.add("d-none");
         }
 
