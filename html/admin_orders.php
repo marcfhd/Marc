@@ -39,9 +39,9 @@ $result = $conn->query("SELECT * FROM orders ORDER BY order_id DESC");
   <div class="container">
     <a class="navbar-brand" href="#">💻 TechHub Admin</a>
     <div class="navbar-nav ms-auto">
-      <a class="nav-link active" href="admin_users.php">Users</a>
+      <a class="nav-link " href="admin_users.php">Users</a>
       <a class="nav-link" href="admin_products.php">Products</a>
-      <a class="nav-link" href="admin_orders.php">Orders</a>
+      <a class="nav-link active" href="admin_orders.php">Orders</a>
     </div>
   </div>
 </nav>
