@@ -6,11 +6,7 @@ if (!isset($_SESSION["user_id"])) {
     exit();
 }
 
-$conn = new mysqli("localhost", "root", "", "techhub_db");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include"connection.php";
 
 $user_id = $_SESSION["user_id"];
 

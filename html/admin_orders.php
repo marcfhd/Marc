@@ -6,11 +6,7 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "admin") {
     exit();
 }
 
-$conn = new mysqli("localhost", "root", "", "techhub_db");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include"connection.php";
 
 if (isset($_POST["update_status"])) {
     $order_id = $_POST["order_id"];

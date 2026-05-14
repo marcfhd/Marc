@@ -1,9 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "techhub_db");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include"connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

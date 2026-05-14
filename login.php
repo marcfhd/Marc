@@ -1,11 +1,7 @@
 <?php
 session_start();
 
-$conn = new mysqli("localhost", "root", "", "techhub_db");
-
-if ($conn->connect_error) {
-    die("Connection Failed: " . $conn->connect_error);
-}
+include"connection.php";
 
 if (isset($_COOKIE["remember_user"])) {
     $_SESSION["user_id"] = $_COOKIE["remember_user"];

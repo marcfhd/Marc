@@ -1,9 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "techhub_db");
-
-if ($conn->connect_error) {
-    die("Connection Failed: " . $conn->connect_error);
-}
+include"connection.php";
 
 $category = "all";
 $search = "";

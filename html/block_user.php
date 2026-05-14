@@ -1,9 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "techhub_db");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include"connection.php";
 
 if (isset($_GET['user_id'])) {
     $user_id = (int) $_GET['user_id'];

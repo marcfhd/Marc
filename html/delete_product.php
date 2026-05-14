@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "techhub_db");
+include"connection.php";
 
 if (isset($_GET['id'])) {
     $id = (int) $_GET['id'];
