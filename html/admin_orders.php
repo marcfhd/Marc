@@ -6,7 +6,7 @@ if (!isset($_SESSION["user_id"]) || $_SESSION["role"] !== "admin") {
     exit();
 }
 
-include"connection.php";
+include"../connection.php";
 
 if (isset($_POST["update_status"])) {
     $order_id = $_POST["order_id"];

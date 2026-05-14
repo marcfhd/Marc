@@ -6,7 +6,7 @@ if (!isset($_SESSION["user_id"])) {
     exit();
 }
 
-include"connection.php";
+include"../connection.php";
 
 $user_id = $_SESSION["user_id"];
 
