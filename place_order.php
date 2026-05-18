@@ -19,7 +19,6 @@ $user_id = $_SESSION["user_id"];
 $total_price = $_POST["total_price"];
 $shipping_address = $conn->real_escape_string($_POST["address"]);
 
-/* GET USER INFO */
 $user_query = "SELECT email, username FROM users WHERE user_id = $user_id";
 $user_result = $conn->query($user_query);
 $user = $user_result->fetch_assoc();
@@ -65,7 +64,7 @@ if ($conn->query($sql)) {
 
             <p>Shipping Address: $shipping_address</p>
 
-            <p>Thank you for shopping with TechHub 💻</p>
+            <p>Thank you for shopping with TechHub </p>
         ";
 
         $mail->send();
