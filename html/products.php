@@ -147,10 +147,10 @@ $result = $conn->query($sql);
 
                             <br>
 
-                            <button class="btn btn-primary">
-                                <i class="fa fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
+                           <a href="add_to_cart.php?product_id=<?= $product['product_id'] ?>" class="btn btn-primary">
+                           <i class="fa fa-cart-plus"></i>
+                             Add to Cart
+                            </a>
 
                            <a href="add_favorite.php?product_id=<?= $product['product_id'] ?>"
                             class="btn btn-outline-danger">
