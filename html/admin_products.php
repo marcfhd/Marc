@@ -74,7 +74,14 @@ $result = $conn->query("SELECT * FROM products");
 
             <td>$<?= $row['price'] ?></td>
 
-            <td><?= $row['color'] ?? '-' ?></td>
+            <td>
+            <?php 
+                if ($row['color'] != "") {
+                  echo $row['color'];
+                } else {
+                 echo "-";
+                }?>
+                </td>
 
             <td>
               <?php if($row['is_available'] == 1) { ?>
