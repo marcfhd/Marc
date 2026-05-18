@@ -21,7 +21,6 @@ if (!isset($_SESSION["user_id"])) {
 <div class="profile-wrapper d-flex justify-content-center align-items-center">
   
   <div class="profile-card">
-    <!-- Form -->
     <div class="p-4">
       <h4 class="text-center mb-4">Edit Profile</h4>
 
