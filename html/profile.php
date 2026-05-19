@@ -59,7 +59,7 @@ if (!isset($_SESSION["user_id"])) {
           </select>
         </div>
 
-       <a href="../html/changepass.html" class="btn btn-primary w-100 rounded-pill mt-3">
+       <a href="../html/changepass.php" class="btn btn-primary w-100 rounded-pill mt-3">
   <i class="fa fa-lock me-2"></i> Change Password
 </a>
        <a href="logout.php" class="btn btn-primary w-100 rounded-pill mt-3">
