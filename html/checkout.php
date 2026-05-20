@@ -2,6 +2,13 @@
 session_start();
 include "../connection.php";
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../PHPMailer-master/src/Exception.php';
+require '../PHPMailer-master/src/PHPMailer.php';
+require '../PHPMailer-master/src/SMTP.php';
+
 if (!isset($_SESSION["user_id"])) {
     header("Location: login_page.php");
     exit();
@@ -40,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $grand_total += $item["price"] * $item["quantity"];
         }
 
-        $shipping_address = $conn->real_escape_string($address . ", " . $city . ", " . $zip);
+        $shipping_address = $conn->real_escape_string($address . ', ' . $city . ', ' . $zip);
 
         $conn->query("
             INSERT INTO orders (user_id, total_price, status, shipping_address)
@@ -67,9 +74,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ");
         }
 
-        $conn->query("DELETE FROM cart_items WHERE cart_id = $cart_id");
+        $user_result = $conn->query("SELECT email, username FROM users WHERE user_id = $user_id");
+        $user = $user_result->fetch_assoc();
 
-        $message = "<div class='alert alert-success'>Order placed successfully!</div>";
+        $email = $user["email"];
+        $username = $user["username"];
+
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+             $mail->Username = 'marc.fahed13@gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Password = 'vohpvyclmobvcpxo';
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+
+            $mail->setFrom('marc.fahed13@gmail.com', 'TechHub');
+            $mail->addAddress($email);
+
+            $mail->isHTML(true);
+            $mail->Subject = 'TechHub Order Confirmation';
+
+            $mail->Body = "
+                <h2>Hello $username</h2>
+                <p>Your order has been placed successfully.</p>
+                <p><strong>Order ID:</strong> $order_id</p>
+                <p><strong>Total Price:</strong> $grand_total $</p>
+                <p><strong>Shipping Address:</strong> $shipping_address</p>
+                <p>Thank you for shopping with TechHub.</p>
+            ";
+
+            $mail->send();
+
+            $conn->query("DELETE FROM cart_items WHERE cart_id = $cart_id");
+
+            $message = "<div class='alert alert-success'>Order placed successfully! Email sent.</div>";
+
+        } catch (Exception $e) {
+            $message = "<div class='alert alert-warning'>Order placed, but email not sent: " . $mail->ErrorInfo . "</div>";
+        }
     }
 }
 
