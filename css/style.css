@@ -21,13 +21,16 @@
     }
 
     .hero-section {
-      padding: 80px 0;
       text-align: center;
-    }
+      padding: 120px 20px;
+      color: white;
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+}
 
     .hero-section h1 {
-      font-weight: 700;
-    }
+    font-size: 48px;
+    font-weight: 800;
+}
     
   .nav-icon {
   color: white;
@@ -39,9 +42,8 @@
 .nav-icon:hover {
   color: #0d6efd; 
 }
-.hero-section {
-  text-align: center;
-  padding: 100px 20px;
+.hero-section p {
+  font-size: 20px;
 }
 
 .card img {
@@ -51,4 +53,32 @@
 
 footer {
   font-size: 14px;
+}
+.btn{
+  border-radius: 30px;
+  padding: 10px 24px;
+  font-weight: 600;
+}
+.card {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+.card-title {
+  font-weight: bold;
+}
+.bg-light .border {
+  border: none !important;
+  border-radius: 18px !important;
+  transition: 0.3s;
+}
+
+.bg-light .border:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
 }
