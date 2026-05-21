@@ -1,22 +1,24 @@
 /* Card style */
 .contact-card {
   background-color: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px lightgray;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px lightgray;
   transition: 0.3s;
+  height: 100%;
 }
 
 
 .contact-card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 12px 25px gray;
 }
 
 
 .icon-box {
-  width: 70px;
-  height: 70px;
-  background-color: blue;
+  width: 75px;
+  height: 75px;
+  background: linear-gradient(45deg, royalblue, purple);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -25,27 +27,33 @@
   margin: auto;
   font-size: 24px;
 }
+.contact-card h5{
+  font-weight: bold;
+}
 
-/* Text */
 .contact-card p {
   color: gray;
-}
-/* Quote box */
-.quote-box {
-  background-color: lightgray;
-  padding: 30px;
-  border-radius: 15px;
-  margin-top: 40px;
+  margin-bottom: 0;
+
 }
 
-/* Quote text */
+.quote-box {
+  background-color: white;
+  padding: 35px;
+  border-radius: 20px;
+  margin-top: 50px;
+  box-shadow: 0 8px 20px lightgray;
+}
+
 .quote-text {
-  font-size: 18px;
+  font-size: 20px;
   font-style: italic;
   color: black;
 }
 
-/* Icon style */
 .quote-box i {
   color: blue;
+}
+body{
+  background-color: whitesmoke;
 }
