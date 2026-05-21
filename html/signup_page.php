@@ -29,7 +29,7 @@ if (isset($_SESSION["user_id"])) {
     </div>
 
     <div class="card-body p-4">
-      
+      <div id="error-msg" class="alert alert-danger text-center" style="display:none;"></div>
       <form action="../signup.php" method="post">
  <div class="mb-3">
           <label class="form-label">Email Address</label>
@@ -50,7 +50,7 @@ if (isset($_SESSION["user_id"])) {
        <div class="mb-3">
   <label class="form-label">Password</label>
   <div class="input-group">
-    <input type="password" min="7" name="pass" class="form-control" id="password" placeholder="Create a password" required>
+    <input type="password" minlength="7" name="pass" class="form-control" id="password" placeholder="Create a password" required>
     <span class="input-group-text" onclick="togglePassword('password', this)" style="cursor:pointer;">
       <i class="fa-solid fa-eye"></i>
     </span>
@@ -76,7 +76,6 @@ if (isset($_SESSION["user_id"])) {
         Already have an account?
         <a href="login_page.php">Login</a>
       </div>
-<div id="error-msg" class="alert alert-danger text-center" style="display:none;"></div>
     </div>
   </div>
 </div>

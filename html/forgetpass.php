@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 require '../PHPMailer-master/src/Exception.php';
 require '../PHPMailer-master/src/PHPMailer.php';
 require '../PHPMailer-master/src/SMTP.php';
-
+$message="";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 $email=$_POST["email"];
@@ -60,7 +60,9 @@ Reset email sent
 }
 catch(Exception $e){
 
-echo "Mailer Error: ".$mail->ErrorInfo;
+$message="<div class='alert alert-danger'>
+Mailer Error: ".$mail->ErrorInfo."
+</div>";
 
 }
 

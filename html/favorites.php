@@ -91,7 +91,6 @@ $result = $conn->query($sql);
             <?php } ?>
 
         </div>
-
     <?php } ?>
 
 </div>
