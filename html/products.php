@@ -39,9 +39,9 @@ $result = $conn->query($sql);
 
 <div class="container mt-4">
 
-    <h2 class="text-center mb-4">Our Products</h2>
-
-    <form method="GET" class="row mb-4">
+    <h2 class="text-center mb-5 fw-bold"> <i class="fa-solid fa-store me-2"></i>Our Products</h2>
+<div class="card shadow-sm p-4 mb-5">
+    <form method="GET" class="row">
 
         <div class="col-md-4">
             <select name="category" class="form-select" onchange="this.form.submit()">
@@ -102,6 +102,7 @@ $result = $conn->query($sql);
         </div>
 
     </form>
+    </div>
 
     <div class="row">
 
@@ -124,10 +125,12 @@ $result = $conn->query($sql);
                             </h5>
 
                             <p class="card-text">
+                                <i class="fa-solid fa-tag"></i>
                                 $<?= $product['price'] ?>
                             </p>
 
                             <p class="text-muted">
+                                <i class="fa-solid fa-layer-groupe"></i>
                                 <?= $product['category_name'] ?>
                             </p>
 
@@ -147,13 +150,13 @@ $result = $conn->query($sql);
 
                             <br>
 
-                           <a href="add_to_cart.php?product_id=<?= $product['product_id'] ?>" class="btn btn-primary">
+                           <a href="add_to_cart.php?product_id=<?= $product['product_id'] ?>" class="btn btn-primary w-100 mb-2">
                            <i class="fa fa-cart-plus"></i>
                              Add to Cart
                             </a>
 
                            <a href="add_favorite.php?product_id=<?= $product['product_id'] ?>"
-                            class="btn btn-outline-danger">
+                            class="btn btn-outline-danger w-100">
                             <i class="fa fa-heart"></i>
                             </a>
 
@@ -166,9 +169,10 @@ $result = $conn->query($sql);
 
         <?php } else { ?>
 
-            <h4 class="text-center mt-4">
-                No products found
-            </h4>
+            <div class="alert alert-warning text-center">
+             <i class="fa-solid fa-face-frown"></i>
+             No products found
+        </div>
 
         <?php } ?>
 

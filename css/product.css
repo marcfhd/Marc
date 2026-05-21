@@ -5,14 +5,16 @@ body {
 
 
 .product-card {
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px gray;
-    transition: 0.3s;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 8px 18px lightgray;
+    transition: 0.4s;
 }
 
 
 .product-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px darkgray;
 }
 
 .card-img-top {
@@ -22,8 +24,14 @@ body {
 
 
 .btn-primary {
-    background-color: blue;
+    background:linear-gradient(
+    45deg,
+  royalblue,
+  purple
+);
     border: none;
+    border-radius: 25px;
+    padding: 10px 18px;
 }
 
 .btn-primary:hover {
@@ -31,4 +39,37 @@ body {
 }
 h2 {
     color: black;
+    font-weight: 700;
+}
+.card-body{
+    padding: 25px;
+}
+.card-title{
+    font-weight: bold;
+    font-size: 22px;
+}
+.card-text{
+    font-size: 20px;
+    color:royalblue ;
+    font-weight: bold;
+}
+.text-muted{
+    font-size:14px;
+}
+.btn-outline-danger{
+    border-radius:25px;
+}
+.form-control,
+.form-select{
+
+border-radius:15px;
+padding:10px;
+border:none;
+box-shadow:0px 3px 8px rgba(0,0,0,0.08);
+
+}
+.badge{
+padding:8px 12px;
+font-size:13px;
+border-radius:20px;
 }
