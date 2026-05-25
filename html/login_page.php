@@ -24,6 +24,9 @@ if (isset($_SESSION["user_id"])) {
 <body>
 
 <div class="card login-card shadow p-4">
+  <div class="text-center mb-3">
+    <i class="fa-solid fa-laptop fa-3x text-primary"></i>
+</div>
 
   <h3 class="text-center mb-4">Login to TechHub</h3>
 

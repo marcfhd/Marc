@@ -57,3 +57,22 @@
 body{
   background-color: whitesmoke;
 }
+.stats-section{
+    background: linear-gradient(135deg,#0d6efd,#6610f2);
+    color:white;
+    padding:40px;
+    border-radius:20px;
+    margin-top:50px;
+    box-shadow:0 8px 20px lightgray;
+}
+
+.stats-section h2{
+    font-size:42px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.stats-section p{
+    color:rgba(255,255,255,0.9);
+    margin:0;
+}
