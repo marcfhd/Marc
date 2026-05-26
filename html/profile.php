@@ -33,12 +33,10 @@ $user=$result->fetch_assoc();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
 <title>My Profile</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="../css/profile.css">
 
 </head>
@@ -57,157 +55,76 @@ $user=$result->fetch_assoc();
 <h4 class="text-center mb-4">
 My Profile
 </h4>
-
 <form method="POST">
-
-<!-- Full Name -->
-
 <div class="mb-3 input-group">
-
 <span class="input-group-text">
 <i class="fa-solid fa-user"></i>
 </span>
-
-<input
-type="text"
-class="form-control custom-input"
-value="<?php echo $user['Full_name']; ?>"
-readonly>
-
+<input type="text"class="form-control custom-input"value="<?php echo $user['Full_name']; ?>"readonly>
 </div>
 
-
-<!-- Username -->
-
 <div class="mb-3 input-group">
-
 <span class="input-group-text">
 <i class="fa-solid fa-at"></i>
 </span>
-
-<input
-type="text"
-class="form-control custom-input"
-value="<?php echo $user['username']; ?>"
-readonly>
-
+<input type="text" class="form-control custom-input" value="<?php echo $user['username']; ?>" readonly>
 </div>
-
-
-<!-- Email -->
-
 <div class="mb-3 input-group">
-
 <span class="input-group-text">
 <i class="fa-solid fa-envelope"></i>
 </span>
-
-<input
-type="email"
-class="form-control custom-input"
-value="<?php echo $user['email']; ?>"
-readonly>
-
+<input type="email" class="form-control custom-input" value="<?php echo $user['email']; ?>" readonly>
 </div>
 
-
-<!-- Phone -->
-
 <div class="mb-3 input-group">
-
 <span class="input-group-text">
 <i class="fa-solid fa-phone"></i>
 </span>
 
-<input
-type="text"
-name="phone"
-class="form-control custom-input"
-placeholder="Enter phone"
-value="<?php echo $user['phone']; ?>">
-
+<input type="text" name="phone" class="form-control custom-input" placeholder="Enter phone" value="<?php echo $user['phone']; ?>">
 </div>
-
-
-<!-- Date of birth -->
-
 <div class="mb-3 input-group">
-
 <span class="input-group-text">
 <i class="fa-solid fa-calendar"></i>
 </span>
 
-<input
-type="date"
-name="date_of_birth"
-class="form-control custom-input"
-value="<?php echo $user['date_of_birth']; ?>">
-
+<input type="date" name="date_of_birth" class="form-control custom-input" value="<?php echo $user['date_of_birth']; ?>">
 </div>
-
-
-<!-- Gender -->
-
 <div class="mb-3 input-group">
-
 <span class="input-group-text">
 <i class="fa-solid fa-venus-mars"></i>
 </span>
-
-<select
-name="gender"
-class="form-control custom-input">
-
+<select name="gender" class="form-control custom-input">
 <option value="">Choose gender</option>
-
 <option value="male"
 <?php if($user["gender"]=="male") echo "selected"; ?>>
 Male
 </option>
-
 <option value="female"
 <?php if($user["gender"]=="female") echo "selected"; ?>>
 Female
 </option>
-
 </select>
-
 </div>
-
-
-<button
-type="submit"
-class="btn btn-success w-100 rounded-pill mt-3">
-
+<button type="submit" class="btn btn-success w-100 rounded-pill mt-3">
 <i class="fa-solid fa-floppy-disk"></i>
 Save Changes
-
 </button>
-
-
 <a href="changepass.php"
 class="btn btn-primary w-100 rounded-pill mt-3">
-
 <i class="fa-solid fa-lock me-2"></i>
 Change Password
-
 </a>
-
-
-<a href="logout.php"
-class="btn btn-danger w-100 rounded-pill mt-3">
-
+<a href="logout.php" class="btn btn-danger w-100 rounded-pill mt-3">
 Logout
-
 </a>
-
 </form>
-
 </div>
 </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

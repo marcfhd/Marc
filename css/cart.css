@@ -1,35 +1,97 @@
-/* Product image */
+body{
+  background: linear-gradient(135deg,aliceblue,lightblue);
+  min-height: 100vh;
+  font-family: Arial,sans-serif;
+}
+
+.container{
+  max-width: 1200px;
+}
+
 .product-img {
   width: 60px !important;
   height: 60px !important;
   object-fit: cover;
   border-radius: 8px;
 }
+h2{
+    font-weight:bold;
+    color:darkblue;
+    margin-bottom:30px;
+}
 
-/* Quantity input */
+
 .quantity {
   width: 80px;
   margin: auto;
 }
-
-/* Cart table shadow and rounded corners */
-.table-responsive {
-  background-color: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.table{
+    margin-bottom:0;
+    background:white;
+}
+.table thead th{
+    background:darkslategray !important;
+    color:white;
+    border:none;
+    padding:18px;
+    font-size:15px;
+}
+.table tbody td{
+    padding:18px;
+    vertical-align:middle;
+    border-color:lightgray;
+}
+.table tbody tr{
+    transition:0.3s;
 }
 
-/* Buttons */
+.table tbody tr:hover{
+    background:aliceblue;
+}
+
+
+.table-responsive {
+  background-color: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+
 .btn-danger {
-  transition: 0.2s;
+   border-radius:20px;
+    padding:6px 14px;
+    transition:0.3s;
 }
 
 .btn-danger:hover {
-  background-color: #c82333;
+  background-color: firebrick;
 }
 
-/* Total section styling */
+
 .text-end h4 {
-  font-weight: 600;
+  font-weight:bold;
+    color:darkslategray;
+}
+.text-end{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    margin-top:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+.text-primary{
+    color:royalblue !important;
+}
+
+.btn-success{
+    border-radius:25px;
+    padding:10px 24px;
+    font-weight:bold;
+    background:green;
+    border:none;
+}
+
+.btn-success:hover{
+    background:darkgreen;
 }

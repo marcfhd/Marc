@@ -5,11 +5,11 @@ body {
 
 .profile-wrapper {
   min-height: 100vh;
-  padding-top: 100px;   /* space below navbar */
-  padding-bottom: 50px; /* optional */
+  padding-top: 100px;   
+  padding-bottom: 50px; 
 }
 
-/* Card */
+
 .profile-card {
   width: 350px;
   background: white;
@@ -18,14 +18,11 @@ body {
   position: relative;
 }
 
-/* Inputs */
 .custom-input {
   border-radius: 10px;
   border: 1px solid lightgray;
   padding: 10px;
 }
-
-/* Button */
 .btn-primary {
   background: midnightblue; 
   border: none;
