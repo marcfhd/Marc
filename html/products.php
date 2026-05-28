@@ -1,5 +1,6 @@
 <?php
 include"../connection.php";
+include "remember.php";
 
 $category = "all";
 $search = "";

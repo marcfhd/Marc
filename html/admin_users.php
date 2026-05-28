@@ -1,5 +1,6 @@
 <?php
 include"../connection.php";
+include "remember.php";
 
 $result = $conn->query("SELECT * FROM users WHERE role = 'user'");
 ?>

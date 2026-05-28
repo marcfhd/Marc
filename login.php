@@ -3,11 +3,6 @@ session_start();
 
 include"connection.php";
 
-if (isset($_COOKIE["remember_user"])) {
-    $_SESSION["user_id"] = $_COOKIE["remember_user"];
-    header("Location: html/index.html");
-    exit();
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
 
@@ -41,7 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
             $_SESSION["role"] = $user["role"];
 
             if (isset($_POST["remember"])) {
-                setcookie("remember_user", $user["user_id"], time() + (86400 * 1), "/");
+                $token = md5(uniqid(rand(), true));
+                setcookie("remember_user", $token, time() + (86400 * 1), "/");
+                $update=$conn->prepare("UPDATE users SET remember_token=? WHERE user_id=?");
+                $update->bind_param("si",$token,$user["user_id"]);
+                $update->execute();
             }
 
             if ($user["role"] === "admin") {

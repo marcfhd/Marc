@@ -1,9 +1,10 @@
 <?php
 session_start();
 include "../connection.php";
+include "remember.php";
 
 if (!isset($_SESSION["user_id"])) {
-    header("Location: signin.php");
+    header("Location: login_page.php");
     exit();
 }
 

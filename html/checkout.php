@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "../connection.php";
+include "remember.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include"../connection.php";
+include "remember.php";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
   $user_id=$_SESSION["user_id"];
   $current=$_POST["current_password"];
