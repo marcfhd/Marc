@@ -80,19 +80,3 @@ h2{
     padding:25px;
     font-size:18px;
 }
-
-@media(max-width:768px){
-
-.table{
-    font-size:13px;
-}
-
-.orders-card{
-    padding:20px;
-}
-
-h2{
-    font-size:28px;
-}
-
-}
