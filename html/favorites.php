@@ -35,7 +35,7 @@ $result = $conn->query($sql);
 
 <div class="container mt-5 mb-5 text-center">
 
-    <h2 class="mb-4">❤️ Your Favorites</h2>
+    <h2 class="mb-4"> Your Favorites</h2>
 
     <?php if ($result->num_rows == 0) { ?>
 
