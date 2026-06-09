@@ -10,7 +10,7 @@ if (!isset($_SESSION["user_id"])) {
 $user_id = $_SESSION["user_id"];
 $product_id = (int) $_GET["product_id"];
 
-/* CHECK IF USER ALREADY HAS A CART */
+
 $cart_query = $conn->query("SELECT * FROM cart WHERE user_id = $user_id");
 
 if ($cart_query->num_rows > 0) {
@@ -25,7 +25,7 @@ if ($cart_query->num_rows > 0) {
     $cart_id = $conn->insert_id;
 }
 
-/* CHECK IF PRODUCT ALREADY EXISTS IN CART */
+
 $item_query = $conn->query("
     SELECT * FROM cart_items
     WHERE cart_id = $cart_id

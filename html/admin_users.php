@@ -32,6 +32,7 @@ $result = $conn->query("SELECT * FROM users WHERE role = 'user'");
       <a class="nav-link active" href="admin_users.php">Users</a>
       <a class="nav-link" href="admin_products.php">Products</a>
        <a class="nav-link" href="admin_orders.php">Orders</a>
+       <a class="nav-link" href="logout.php">logout</a>
     </div>
   </div>
 </nav>
